@@ -45,12 +45,8 @@ module OpenAI
       OpenAI::Client.json_post(path: "/moderations", parameters: parameters)
     end
 
-    def transcribe(parameters: {})
-      OpenAI::Client.multipart_post(path: "/audio/transcriptions", parameters: parameters)
-    end
-
-    def translate(parameters: {})
-      OpenAI::Client.multipart_post(path: "/audio/translations", parameters: parameters)
+    def audios
+      @audios ||= OpenAI::Audios.new
     end
   end
 end
