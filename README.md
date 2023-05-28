@@ -321,7 +321,7 @@ Whisper is a speech to text model that can be used to generate text based on aud
 The translations API takes as input the audio file in any of the supported languages and transcribes the audio into English.
 
 ```ruby
-response = client.translate(
+response = client.audios.translate(
     parameters: {
         model: "whisper-1",
         file: File.open("path_to_file", "rb"),
@@ -335,7 +335,7 @@ puts response["text"]
 The transcriptions API takes as input the audio file you want to transcribe and returns the text in the desired output file format.
 
 ```ruby
-response = client.transcribe(
+response = client.audios.transcribe(
     parameters: {
         model: "whisper-1",
         file: File.open("path_to_file", "rb"),
